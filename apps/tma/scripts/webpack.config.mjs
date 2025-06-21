@@ -18,7 +18,7 @@ export default {
     path: resolve(import.meta.dirname, "../dist"),
     filename: "[name].[contenthash].js",
     clean: true,
-    publicPath: "auto",
+    publicPath: "/",
   },
   resolve: {
     extensions: [".tsx", ".ts", ".js", ".jsx", ".mjs", ".cjs", ".css"],

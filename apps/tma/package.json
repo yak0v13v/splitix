@@ -25,6 +25,7 @@
     "webpack-dev-server": "^5.2.2"
   },
   "dependencies": {
-    "preact": "^10.26.9"
+    "preact": "^10.26.9",
+    "wouter-preact": "^3.7.1"
   }
 }

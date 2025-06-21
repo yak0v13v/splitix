@@ -1,7 +1,8 @@
+import { Router } from "./router";
 import "./global.css";
 
 const App = () => {
-  return <h1>Hello TMA</h1>;
+  return <Router />;
 };
 
 export { App };
