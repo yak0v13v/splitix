@@ -6,6 +6,7 @@ import { EsbuildPlugin } from "esbuild-loader";
 import PreactRefreshPlugin from "@prefresh/webpack";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import { createRequire } from "node:module";
+import CopyPlugin from "copy-webpack-plugin";
 
 const require = createRequire(import.meta.url);
 
@@ -93,6 +94,9 @@ export default {
       },
     }),
     new MiniCssExtractPlugin({ filename: "[contenthash].css", chunkFilename: "[contenthash].css" }),
+    new CopyPlugin({
+      patterns: [{ from: "public", to: "./", globOptions: { ignore: ["**/index.html"] } }],
+    }),
     new HtmlWebpackPlugin({ template: "./public/index.html" }),
     new webpack.ProvidePlugin({ React: "preact" }),
   ].filter(Boolean),
