@@ -1,0 +1,30 @@
+{
+  "name": "tma",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "webpack serve --config ./scripts/webpack.config.mjs",
+    "build": "NODE_ENV=production webpack build --config ./scripts/webpack.config.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.11.1",
+  "devDependencies": {
+    "@prefresh/core": "^1.5.3",
+    "@prefresh/webpack": "^4.0.2",
+    "css-loader": "^7.1.2",
+    "esbuild-loader": "^4.3.0",
+    "html-webpack-plugin": "^5.6.3",
+    "mini-css-extract-plugin": "^2.9.2",
+    "style-loader": "^4.0.0",
+    "typescript": "^5.8.3",
+    "typescript-plugin-css-modules": "^5.1.0",
+    "webpack": "^5.99.9",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.2"
+  },
+  "dependencies": {
+    "preact": "^10.26.9"
+  }
+}
