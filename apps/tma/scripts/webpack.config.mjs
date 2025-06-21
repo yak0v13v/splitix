@@ -5,8 +5,19 @@ import webpack from "webpack";
 import { EsbuildPlugin } from "esbuild-loader";
 import PreactRefreshPlugin from "@prefresh/webpack";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import { createRequire } from "node:module";
+
+const require = createRequire(import.meta.url);
 
 const isProduction = process.env.NODE_ENV === "production";
+
+const tsconfig = require("../tsconfig.json");
+
+const pathAliases = Object.fromEntries(
+  Object.entries(tsconfig.compilerOptions.paths ?? {}).map((el) => {
+    return [el[0], resolve(import.meta.dirname, "..", el[1][0])];
+  })
+);
 
 /**
  * @type {import("webpack").Configuration & import("webpack-dev-server").Configuration}
@@ -27,6 +38,7 @@ export default {
       "react-dom/test-utils": "preact/test-utils",
       "react-dom": "preact/compat", // Должно быть ниже test-utils
       "react/jsx-runtime": "preact/jsx-runtime",
+      ...pathAliases,
     },
   },
   module: {
