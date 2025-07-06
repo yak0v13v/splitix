@@ -9,5 +9,11 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "packageManager": "pnpm@10.11.1"
+  "packageManager": "pnpm@10.11.1",
+  "dependencies": {
+    "@radix-ui/react-alert-dialog": "^1.1.14"
+  },
+  "peerDependencies": {
+    "preact": ">= 10"
+  }
 }
