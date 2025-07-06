@@ -50,6 +50,9 @@ importers:
 
   apps/tma:
     dependencies:
+      '@splitix/ds':
+        specifier: workspace:^
+        version: link:../../packages/ds
       effector:
         specifier: ^23.3.0
         version: 23.3.0
@@ -102,6 +105,8 @@ importers:
       webpack-dev-server:
         specifier: ^5.2.2
         version: 5.2.2(webpack-cli@6.0.1)(webpack@5.99.9)
+
+  packages/ds: {}
 
 packages:
 
