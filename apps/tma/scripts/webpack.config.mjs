@@ -7,6 +7,7 @@ import PreactRefreshPlugin from "@prefresh/webpack";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import { createRequire } from "node:module";
 import CopyPlugin from "copy-webpack-plugin";
+import CssMinimizerPlugin from "css-minimizer-webpack-plugin";
 
 const require = createRequire(import.meta.url);
 
@@ -100,6 +101,9 @@ export default {
     new HtmlWebpackPlugin({ template: "./public/index.html" }),
     new webpack.ProvidePlugin({ React: "preact" }),
   ].filter(Boolean),
+  optimization: {
+    minimizer: ["...", new CssMinimizerPlugin()],
+  },
   devServer: {
     hot: true,
     port: 3000,
