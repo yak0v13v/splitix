@@ -14,6 +14,7 @@
     "@radix-ui/react-alert-dialog": "^1.1.14"
   },
   "peerDependencies": {
-    "preact": ">= 10"
+    "preact": ">= 10",
+    "clsx": ">= 2"
   }
 }
